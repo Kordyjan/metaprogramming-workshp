@@ -8,3 +8,5 @@ hs_err_pid*
 .bsp
 .scala-build
 .vscode
+.progress/**
+!**/.gitkeep

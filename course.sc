@@ -5,6 +5,7 @@
 
 val wd = os.pwd / os.RelPath(scriptPath) / os.up
 val repository = wd / ".repository"
+val progress = wd / ".progress"
 
 args match
   case Array("--help" | "-help" | "-h") =>
@@ -76,7 +77,7 @@ def excerciseStep(excercise: Int, step: Int) =
   path
 
 def setCurrent(excercise: Int, step: Int) =
-  val path = repository / f"$excercise"
+  val path = progress / f"$excercise"
   os.write.over(path, step.toString)
 
 def getCurrent(excercise: Int) =
