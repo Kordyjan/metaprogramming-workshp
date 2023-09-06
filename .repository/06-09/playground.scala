@@ -9,9 +9,10 @@ package e06
 
 import scala.quoted.*
 
-inline def test(inline operation: List[Int]) = ${ testImpl('operation) }
+inline def test = ${ testImpl }
 
-def testImpl(operation: Expr[List[Int]])(using Quotes): Expr[Unit] =
+def testImpl(using Quotes): Expr[Unit] =
+  val operation: Expr[List[Int]] = '{ List(1, 2, 3) ++ List(4, 5, 6) }
   operation match
     case '{ ($l: List[Int]) ++ ($r: List[Int]) } =>
       '{ println($l) }

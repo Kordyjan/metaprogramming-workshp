@@ -9,11 +9,10 @@ package e06
 
 import scala.quoted.*
 
-inline def test(inline operation: List[Int]) = ${ testImpl('operation) }
-
-def testImpl(operation: Expr[List[Int]])(using Quotes): Expr[Unit] =
+def test(using Quotes) =
+  val operation = '{ 3 :: Nil }
   operation match
-    case '{ ($l: List[Int]) ++ ($r: List[Int]) } =>
-      '{ println($l) }
+    case '{ ($a: Int) :: ($rest: List[Int]) } =>
+      '{ println($a) }
     case '{ $list: List[Int] } =>
       '{ println("???") }
