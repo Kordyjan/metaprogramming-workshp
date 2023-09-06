@@ -28,12 +28,12 @@ def printUsageInfo(args: Option[Array[String]]) =
     println("Unknown command: " + a.mkString(" ") + "\n")
   println("Usage: course.sc [command]")
   println("Commands:")
-  println("  reset\t\t reset all excercises")
-  println("  <excercise number> reset \t reset excercise")
-  println("  <excercise number> next \t next step")
-  println("  <excercise number> clear \t clear current changes in the excercise")
-  println("  <excercise number> goto <step number> \t go to step")
-  println("  --help\t\t print this help message")
+  println("  reset\t\t\t\t\t reset all excercises")
+  println("  <excercise number> reset \t\t reset excercise")
+  println("  <excercise number> next \t\t next step")
+  println("  <excercise number> clear \t\t clear current changes in the excercise")
+  println("  <excercise number> goto <step number>\t go to step")
+  println("  --help\t\t\t\t print this help message")
 
 
 def resetAll() =
