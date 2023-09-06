@@ -1,0 +1,25 @@
+A)
+---
+doubling
+BEEP!
+BEEP! BEEP!
+3
+
+B)
+---
+doubling
+BEEP!
+2
+
+C)
+---
+doubling
+BEEP!
+BEEP! BEEP!
+3
+
+D)
+---
+BEEP!
+doubling
+2
