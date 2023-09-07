@@ -33,3 +33,9 @@ To see all options run
 ```sh
 ./course.sc --help
 ```
+
+On windows you may have to use longer form of invocation, so to go to the next stop in excercise 7, run:
+
+```sh
+scala-cli course.sc -- 7 next
+```
