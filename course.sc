@@ -78,10 +78,11 @@ def excerciseStep(excercise: Int, step: Int) =
 
 def setCurrent(excercise: Int, step: Int) =
   val path = progress / f"$excercise"
+  println(s"Setting current step for excercise $excercise to $step")
   os.write.over(path, step.toString)
 
 def getCurrent(excercise: Int) =
-  val path = repository / f"$excercise"
+  val path = progress / f"$excercise"
   if !os.isFile(path) then 0
   else os.read(path).toInt
 
