@@ -5,14 +5,14 @@ package e04
 // Then, modify the `empty` method in such a way that it fails during the compilation if the name of the type is not recognized, insted of crashing at runtime.
 
 def run =
-  val intList: List[Int] = 42 :: empty("List")
-  val stringList: List[String] = empty("String") :: empty("List")
-  val number: Int = empty("Int") * 2
+  // val intList: List[Int] = 42 :: empty("List")
+  // val stringList: List[String] = empty("String") :: empty("List")
+  // val number: Int = empty("Int") * 2
   println("ok?")
 
-transparent inline def empty(name: String) =
-  inline name match
+def empty(name: String) =
+  name match
     case "List" => List.empty
     case "String" => ""
     case "Int" => 0
-    case _: String => compiletime.error("Unknown type")
+    case _: String => throw IllegalArgumentException()

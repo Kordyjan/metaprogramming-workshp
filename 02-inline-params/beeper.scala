@@ -10,7 +10,7 @@ def run =
   val res = double(beeper.beep())
   println(res)
 
-inline def double(inline x: Int): Int =
+inline def double(x: Int): Int =
   println("doubling")
   x + x
 

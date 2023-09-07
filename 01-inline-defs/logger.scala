@@ -6,10 +6,10 @@ package e01
 //    scala-cli compile 01-inline-defs -d out
 //    jjavap -v out.e01.logger\$package\$
 
-val loggingEnabled: false = false
+val loggingEnabled = false
 
-inline def log(msg: String): Unit =
-  inline if loggingEnabled then println(msg)
+def log(msg: String): Unit =
+  if loggingEnabled then println(msg)
 
 def square(x: Int): Int =
   log(s"square($x)")

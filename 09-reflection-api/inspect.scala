@@ -8,9 +8,5 @@ import scala.quoted.*
 inline def inspect(inline expr: Any): String = ${ inspectImpl('expr) }
 
 def inspectImpl(expr: Expr[Any])(using Quotes): Expr[String] =
-  import quotes.reflect.*
-
-  val result: Term = expr.asTerm
-  result match
-    case Inlined(_, _, Block(_, value)) => Expr(value.asExpr.show)
-    case _ => Expr("???")
+  val result = expr.toString
+  Expr(result)
