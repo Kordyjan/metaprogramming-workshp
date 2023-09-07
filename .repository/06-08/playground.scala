@@ -11,10 +11,10 @@ import scala.quoted.*
 
 inline def test = ${ testImpl }
 
-def testImpl(using Quotes): Expr[Unit] =
-  val operation = '{ 3 :: Nil }
+def testImpl(using Quotes) =
+  val operation = '{ List(1, 2) ++ List(3, 4) }
   operation match
-    case '{ ($a: Int) :: ($rest: List[Int]) } =>
-      '{ println($a) }
+    case '{ ($l: List[Int]) ++ ($r: List[Int]) } =>
+      '{ println($l) }
     case '{ $list: List[Int] } =>
       '{ println("???") }
